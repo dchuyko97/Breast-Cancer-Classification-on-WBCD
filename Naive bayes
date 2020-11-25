@@ -1,0 +1,17 @@
+#Code for Naive bayes
+
+import numpy as np
+
+    def predict(summaries, row):
+	probabilities = calculate_class_probabilities(summaries, row)
+	best_label, best_prob = None, -1
+	for class_value, probability in probabilities.items():
+		if best_label is None or probability > best_prob:
+			best_prob = probability
+			best_label = class_value
+	return best_label
+
+    def accuracy(numbers):
+	avg = mean(numbers)
+	variance = sum([(x-avg)**2 for x in numbers]) / float(len(numbers)-1)
+	return sqrt(variance)
