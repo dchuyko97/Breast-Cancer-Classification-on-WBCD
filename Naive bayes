@@ -1,5 +1,56 @@
 #Code for Naive bayes
 
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+    
+if __name__ == "__main__":
+    app.run(debug=True)
+
+import React from "react";
+import classNames from "classnames/bind";
+
+import styles from "./index.scss";
+
+const cx = classNames.bind(styles);
+
+function __templateNameToPascalCase__() {
+  return <div className={cx("__templateNameToParamCase__")}>Hello :)</div>;
+}
+
+export default __templateNameToPascalCase__;
+
+# @see https://editorconfig-specification.readthedocs.io/en/latest/
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+charset = utf-8
+
+# 4 space indentation
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
+
+
 import numpy as np
 
     def predict(summaries, row):
